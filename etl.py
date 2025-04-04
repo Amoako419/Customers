@@ -14,7 +14,6 @@ def extract():
 def transform(df):
     """Transform the data (e.g., clean or modify)."""
     print("Transforming data...")
-    # Example transformation: Convert all strings to uppercase
     df['name'] = df['name'].str.upper()
     return df
 
