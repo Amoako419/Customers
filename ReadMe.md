@@ -101,7 +101,7 @@ After the ETL process completes, you can verify that the data has been loaded in
 
 2. Once connected, run the following SQL query to view the data:
    ```sql
-   SELECT * FROM users;
+   SELECT * FROM customers;
    ```
 
 You should see the transformed data from the `data.csv` file.

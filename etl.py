@@ -12,16 +12,26 @@ def extract():
     return df
 
 def transform(df):
-    """Transform the data (e.g., clean or modify)."""
+    """Transform the data (clean and validate)."""
     print("Transforming data...")
-    df['name'] = df['name'].str.upper()
+    
+    # Drop rows with missing values
+    df.dropna(inplace=True)
+    
+    # Ensure join_date is in the correct format
+    df['join_date'] = pd.to_datetime(df['join_date'], errors='coerce')
+    df.dropna(subset=['join_date'], inplace=True)
+    
+    # Check for duplicate emails
+    df.drop_duplicates(subset=['email'], keep='first', inplace=True)
+    
     return df
 
 def load(df):
     """Load data into the PostgreSQL database."""
     print("Loading data into the database...")
     engine = create_engine(DATABASE_URL)
-    df.to_sql("users", engine, if_exists="append", index=False)
+    df.to_sql("customers", engine, if_exists="append", index=False)
 
 def main():
     try:
