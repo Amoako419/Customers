@@ -1,6 +1,3 @@
-Below is a comprehensive `README.md` for the ETL project. It includes step-by-step instructions for setting up and running the project.
-
----
 
 # **ETL Project with Python, PostgreSQL, and Docker**
 
@@ -46,7 +43,7 @@ project/
 ### **Step 1: Clone or Download the Project**
 If you cloned the repository, navigate to the project directory:
 ```bash
-cd path/to/project
+cd Customers
 ```
 
 ### **Step 2: Build the Docker Images**
@@ -142,7 +139,3 @@ Feel free to open issues if you encounter any problems or have suggestions for e
 ## **License**
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-That's it! With these steps, you should be able to set up, run, and customize the ETL project. Let me know if you have any questions or need further assistance!
